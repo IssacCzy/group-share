@@ -1,0 +1,37 @@
+### tomcat start port
+server:
+  port: 8787
+  
+  # tomcat 最大线程数，默认为200
+  tomcat:
+    max-threads: 800
+    
+    # tomcat 的 URI 编码
+    uri-encoding: UTF-8
+
+
+### mybatis
+### mapperLocations 指的路径是 src/main/resources
+mybatis:
+  typeAliasesPackage: com.issac.domain
+  mapperLocations: classpath:mapper/*.xml
+
+    
+### 页面默认前缀目录
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      
+      # 响应页面默认后缀
+      suffix: .jsp
+      
+  ### 数据库配置
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    
+    ### # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
